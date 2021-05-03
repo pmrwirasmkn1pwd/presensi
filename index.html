@@ -11,6 +11,8 @@
     ></script>
   </head>
   <body>
+    
+    // STORING DATA
     <div class="container">
       <div class="form">
         <div class="contact-info">
@@ -84,12 +86,17 @@
     <script src="app.js"></script>
 
     <script>
+      
+      //COMMUNICATE WITH API
       const scriptURL = 'https://script.google.com/macros/s/AKfycbxFkelwUxJSYzI4xecZsaphE5nLftMVkdWCnzP1oGxG-dJIBM3IsJ-gQ0cOvP9oFxUV/exec'
       const form = document.forms['sieOtan-presensi']
     
+      //PUSH JSON
       form.addEventListener('submit', e => {
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        
+          //IF ELSE PROCEDURE
           .then(response => window.location = 'success.html')
           .catch(error => console.error('Error!', error.message))
       })
