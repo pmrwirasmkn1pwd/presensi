@@ -92,6 +92,7 @@
     
       //PUSH JSON
       form.addEventListener('submit', e => {
+        document.getElementById("btn_click").disabled = true;
         e.preventDefault()
         fetch(scriptURL, { method: 'POST', body: new FormData(form)})
         
